@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>dashboard - capstone</title>
+</head>
+<body>
+<div class="head">
+    <p>DASHBOARD</p>
+</div>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+<div id="myChart1" style="width:100%; max-width:600px; height:500px;"></div>
+
+
+<!--https://www.w3schools.com/js/js_graphics_google_chart.asp---->
+
+<script>
+//line graph
+google.charts.load('current',{packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Price', 'Size'],
+  [50,7],[60,8],[70,8],[80,9],[90,9],
+  [100,9],[110,10],[120,11],
+  [130,14],[140,14],[150,15]
+]);
+
+// Set Options
+const options = {
+  title: 'House Prices vs. Size',
+  hAxis: {title: 'Square Meters'},
+  vAxis: {title: 'Price in Millions'},
+  legend: 'none'
+};
+
+// Draw
+const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+chart.draw(data, options);
+
+}
+
+
+//pie graph
+
+/*to change
+
+
+*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart1);
+
+function drawChart1() {
+
+// Set Data
+const data1 = google.visualization.arrayToDataTable([
+  ['Contry', 'Mhl'],
+  ['Italy',54.8],
+  ['France',48.6],
+  ['Spain',44.4],
+  ['USA',23.9],
+  ['Argentina',14.5]
+]);
+
+// Set Options
+const options1 = {
+  title:'World Wide Wine Production'
+};
+
+// Draw
+const chart1 = new google.visualization.PieChart(document.getElementById('myChart1'));
+chart1.draw(data1, options1);
+
+}
+</script>
+</body>
+  <footer class="footsec">
+    <section class="bottomPortion">
+      <div class="part1"><img src="images/logo2.png"><p>AT <b>PRESS</b>CAFE WE CAN PRINT YOUR BOOK WHILE YOU WAIT AT OUR <b>COMFORTABLE</b> AND <b>IMMERSIVE</b> OUTLETS</p></div>
+
+      <div class="part2"><div class="part2c"><p>Where your dream project becomes a reality<br><br>1016 Strada Ottubre, Via Vergine,<br>Millano,70-B Italia <br><br>+39 722 786 8799<br><br>customercare@presscafe.it</p></div><div class="part2c"><img src="images/map_ny.jpg"></div><div class="part2c"><img src="images/map_milan.jpg"></div></div>
+
+      <div class="part3">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">CLIENTS</a></li>
+          <li><a href="#">TESTIMONIALS</a></li>
+          <li><a href="#">FAQS</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+      </section>
+      <div class="base"> <div class="inside"><p class="left">@ COPYRIGHT 2021 PRESSCAFE</p> <p class="right">WEB DEVELOPED BY yayy</p></div></div>
+  </footer>
+</html>
